@@ -5,21 +5,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>USIU Phoenix chess club</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="about.css">
     <link rel="shortcut icon" href="usiu-logo.PNG" type="image/x-icon">
 </head>
 <body>
     <div class="header">
         <img src="usiu-logo.PNG" alt="usiu-logo">
 
-        <ul class="navbar">
+        <ul class="navbar" id="navbar">
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html" class="active">About Us</a></li>
             <li><a href="tournament.html">Tournaments</a></li>
             <li><a href="contact.html">Contact Us</a></li>
             <li><a href="lessons.html">Lessons</a></li>
         </ul>
+
+        <div class="menu-icon" id="menuIcon">&#9776;</div>
     </div>
-    <div class="body"></div>
+    <div class="body">
+        <div class="about-section-page">
+            <h1>Welcome to the USIU Chess Club</h1>
+            <p>The USIU Chess Club is a community of passionate chess enthusiasts dedicated to promoting the game of chess and fostering a welcoming environment for players of all skill levels.</p>
+            <p>Our club is not just about competition; it's a space where individuals come together to share their love for the strategic and intellectually stimulating game of chess.</p>
+
+            <img src="usiu-chess-e.jpg" alt="">
+            <h2>Our Mission</h2>
+            <p>Our mission is to provide a platform for chess enthusiasts to improve their skills, engage in friendly competition, and build lasting connections within the chess community.</p>
+
+            <img src="usiu-chess.jpg" alt="">
+            <h2>What We Offer</h2>
+            <p>Whether you are a beginner looking to learn the rules or an experienced player seeking challenging opponents, the USIU Chess Club has something to offer. We organize regular training sessions, tournaments, and casual play events.</p>
+
+            <h2>Join Us!</h2>
+            <p>Everyone is welcome to join the USIU Chess Club. Whether you are a student, faculty member, or chess enthusiast from the wider community, we invite you to be a part of our community.</p>
+
+            <img src="usiu-chess-f.jpg" alt="" style="height: 70vh;">
+            <br>
+            <button>Contact Us</button>
+    </div>
     <footer>
         <div class="footer-content">
             <div class="footer-logo">
@@ -56,5 +79,11 @@
             <p>&copy; 2023 USIU Chess Club. All Rights Reserved.</p>
         </div>
     </footer>
+    <script>
+        document.getElementById('menuIcon').addEventListener('click', function() {
+            var navbar = document.getElementById('navbar');
+            navbar.classList.toggle('show');
+        });
+    </script>
 </body>
 </html>

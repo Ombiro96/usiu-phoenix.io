@@ -1,0 +1,40 @@
+.tournament-section {
+    display: flex;
+    margin-top: 20px;
+}
+
+.tournament-section-text {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    padding: 20px;
+}
+
+.tournament-section-image {
+    width: 50%;
+    height: auto;
+    background-size: cover;
+}
+
+.tournament-section-text > button {
+    background-color: orange;
+    color: white;
+    font-weight: bold;
+    padding: 20px;
+    margin-top: 20px;
+    border: 2px solid orange;
+    border-radius: 20px;
+    width: 200px;
+    cursor: pointer;
+}
+
+.tournament-section-text > button:hover {
+    background-color: white;
+    color: orange;
+    font-weight: bold;
+    padding: 20px;
+    margin-top: 20px;
+}

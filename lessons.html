@@ -12,13 +12,15 @@
     <div class="header">
         <img src="usiu-logo.PNG" alt="usiu-logo">
 
-        <ul class="navbar">
+        <ul class="navbar" id="navbar">
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About Us</a></li>
             <li><a href="tournament.html">Tournaments</a></li>
             <li><a href="contact.html">Contact Us</a></li>
             <li><a href="lessons.html" class="active">Lessons</a></li>
         </ul>
+
+        <div class="menu-icon" id="menuIcon">&#9776;</div>
     </div>
 
 
@@ -37,10 +39,7 @@
         </section>
 
         <section class="image-text-section">
-            <div class="image-half">
-                <!-- Add your image here -->
                 <img src="your-image1.jpg" alt="Image 1">
-            </div>
 
             <div class="text-half">
                 <h3>Learn and Improve</h3>
@@ -111,5 +110,11 @@
             <p>&copy; 2023 USIU Chess Club. All Rights Reserved.</p>
         </div>
     </footer>
+    <script>
+        document.getElementById('menuIcon').addEventListener('click', function() {
+            var navbar = document.getElementById('navbar');
+            navbar.classList.toggle('show');
+        });
+    </script>
 </body>
 </html>

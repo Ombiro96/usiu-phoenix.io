@@ -1,0 +1,36 @@
+.contact-section {
+    background-color: orange;
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: auto;
+}
+
+label {
+    margin-top: 10px;
+}
+
+input {
+    padding: 10px;
+    margin-bottom: 15px;
+}
+
+button {
+    background-color: white;
+    color: orange;
+    padding: 15px;
+    border: 2px solid orange;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: orange;
+    color: white;
+}

@@ -5,21 +5,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>USIU Phoenix chess club</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="tournament.css">
     <link rel="shortcut icon" href="usiu-logo.PNG" type="image/x-icon">
 </head>
 <body>
     <div class="header">
         <img src="usiu-logo.PNG" alt="usiu-logo">
 
-        <ul class="navbar">
+        <ul class="navbar" id="navbar">
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About Us</a></li>
             <li><a href="tournament.html" class="active">Tournaments</a></li>
             <li><a href="contact.html">Contact Us</a></li>
             <li><a href="lessons.html">Lessons</a></li>
         </ul>
+
+        <div class="menu-icon" id="menuIcon">&#9776;</div>
     </div>
-    <div class="body"></div>
+    <div class="body">
+        <div class="tournament-section" id="kenyan-league">
+            <img src="usiu-chess-b.jpg" alt="">
+            <div class="tournament-section-text">
+                <h1>Kenyan National League</h1>
+                <p>Join us for the Kenyan National Chess League, where players from across the country compete for the championship. Experience high-level chess games and exciting strategies.</p>
+                <button><a href="https://nation.africa/kenya/sports/other-sports/chess-equity-bank-win-premier-league--4439556" target="_blank" style="text-decoration: none;">Learn More</a></button>
+            </div>
+        </div>
+
+        <div class="tournament-section" id="kusa">
+            <div class="tournament-section-text">
+                <h1>KUSA Chess Tournament</h1>
+                <p>Participate in the KUSA Chess Tournament organized by the Kenya University Sports Association. Showcase your chess skills and compete against players from various universities.</p>
+                <button><a href="https://www.the-star.co.ke/sports/2023-04-03-kusa-games-were-part-of-scorpions-and-gladiators-preps-senge/" target="_blank" style="text-decoration: none;">Learn More</a></button>
+            </div>
+            <img src="usiu-chess-d.jpg" alt="">
+        </div>
+
+        <div class="tournament-section" id="other-tournament">
+            <img src="usiu-chess-f.jpg" alt="">
+            <div class="tournament-section-text">
+                <h1>Other Tournaments</h1>
+                <p>Explore additional chess tournaments organized by our community. Whether you are a seasoned player or a beginner, there's a tournament for everyone. Join us for a challenging and fun chess experience!</p>
+                <button><a href="https://www.the-star.co.ke/sports/2023-04-03-kusa-games-were-part-of-scorpions-and-gladiators-preps-senge/" target="_blank" style="text-decoration: none;">Learn More</a></button>
+            </div>
+        </div>
+    </div>
     <footer>
         <div class="footer-content">
             <div class="footer-logo">
@@ -56,5 +86,11 @@
             <p>&copy; 2023 USIU Chess Club. All Rights Reserved.</p>
         </div>
     </footer>
+    <script>
+        document.getElementById('menuIcon').addEventListener('click', function() {
+            var navbar = document.getElementById('navbar');
+            navbar.classList.toggle('show');
+        });
+    </script>
 </body>
 </html>
