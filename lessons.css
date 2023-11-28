@@ -1,0 +1,32 @@
+.club-teaching {
+    margin-bottom: 20px;
+}
+
+.image-text-section {
+    display: flex;
+    margin-bottom: 30px;
+}
+
+.image-half,
+.text-half {
+    flex: 1;
+}
+
+.image-half img {
+    width: 100%;
+    height: auto;
+}
+
+.text-half {
+    padding: 0 20px;
+}
+
+@media (max-width: 768px) {
+    .image-text-section {
+        flex-direction: column;
+    }
+
+    .text-half {
+        padding: 20px 0;
+    }
+}
