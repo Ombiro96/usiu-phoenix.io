@@ -54,7 +54,6 @@ body{
 
 .hero-section{
     color: orange;
-    /* background-image: url(/usiu-chess-c.jpg); */
     background-size: cover;
     background-repeat: no-repeat;
     display: flex;
@@ -80,9 +79,14 @@ body{
     border: 5px solid white;
 }
 
-.about-section-content{
+.about-section{
     display: flex;
     margin-top: 20px;
+}
+
+.about-section > img{
+    width: 50%;
+    height: auto;
 }
 
 .about-section-text{
@@ -92,13 +96,6 @@ body{
     justify-content: center;
     align-items: center;
     font-size: 20px;
-}
-
-.about-section-image{
-    width: 50%;
-    height: inherit;
-    background-image: url(/usiu-chess.jpg);
-    background-size: cover;
 }
 
 .about-section-text > button{
