@@ -1,102 +1,386 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>USIU Phoenix</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="shortcut icon" href="usiu-logo.PNG" type="image/x-icon">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>USIU Phoenix Chess Club</title>
+  <meta name="description" content="The official chess club of USIU Africa. Join a community of passionate players, compete in tournaments, and sharpen your mind.">
+  <link rel="shortcut icon" href="usiu-logo.PNG" type="image/x-icon">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* ── Hero ── */
+    .hero {
+      position: relative;
+      min-height: calc(100vh - var(--nav-h));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('hero-logo.jpg');
+      background-size: cover;
+      background-position: center;
+      transform: scale(1.03);
+      transition: transform 8s ease;
+    }
+
+    .hero-bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom,
+        rgba(13,13,23,0.6) 0%,
+        rgba(13,13,23,0.55) 60%,
+        rgba(13,13,23,0.95) 100%);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      padding: 2rem 1.5rem;
+      max-width: 760px;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--orange);
+      background: rgba(249,115,22,0.12);
+      border: 1px solid rgba(249,115,22,0.3);
+      padding: 0.35rem 0.9rem;
+      border-radius: 99px;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 5.5vw, 3.8rem);
+      font-weight: 800;
+      line-height: 1.1;
+      color: var(--text);
+      margin-bottom: 1.25rem;
+    }
+
+    .hero h1 span { color: var(--orange); }
+
+    .hero p {
+      font-size: 1.1rem;
+      color: rgba(240,244,255,0.75);
+      margin-bottom: 2rem;
+      line-height: 1.7;
+    }
+
+    .hero-cta {
+      display: flex;
+      gap: 0.875rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* ── Stats bar ── */
+    .stats-bar {
+      background: var(--bg-2);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .stats-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1.75rem 2rem;
+      display: flex;
+      justify-content: center;
+      gap: 3.5rem;
+      flex-wrap: wrap;
+    }
+
+    .stat { text-align: center; }
+
+    .stat-num {
+      display: block;
+      font-size: 1.75rem;
+      font-weight: 800;
+      color: var(--orange);
+      line-height: 1;
+    }
+
+    .stat-label {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-top: 0.25rem;
+      font-weight: 500;
+    }
+
+    /* ── Feature cards ── */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.25rem;
+      margin-top: 2.5rem;
+    }
+
+    .feature-card {
+      background: var(--bg-2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.75rem;
+      transition: border-color var(--transition), transform var(--transition);
+    }
+
+    .feature-card:hover {
+      border-color: rgba(249,115,22,0.35);
+      transform: translateY(-3px);
+    }
+
+    .feature-icon {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+    }
+
+    .feature-card h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .feature-card p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
+
+    /* ── CTA banner ── */
+    .cta-banner {
+      background: linear-gradient(135deg, var(--bg-3) 0%, rgba(249,115,22,0.08) 100%);
+      border: 1px solid rgba(249,115,22,0.2);
+      border-radius: var(--radius);
+      padding: 3.5rem 2rem;
+      text-align: center;
+      margin: 0 2rem 4rem;
+      max-width: 1160px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .cta-banner h2 {
+      font-size: clamp(1.5rem, 3vw, 2.25rem);
+      font-weight: 800;
+      margin-bottom: 0.75rem;
+    }
+
+    .cta-banner p {
+      color: var(--text-muted);
+      margin-bottom: 1.75rem;
+      font-size: 1rem;
+    }
+
+    @media (max-width: 600px) {
+      .stats-inner { gap: 2rem; }
+      .cta-banner { margin: 0 1.25rem 3rem; padding: 2.5rem 1.5rem; }
+    }
+  </style>
 </head>
 <body>
-    <div class="header">
-        <img src="usiu-logo.PNG" alt="usiu-logo">
 
-        <ul class="navbar" id="navbar">
-            <li><a href="index.html" class="active">Home</a></li>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="tournament.html">Tournaments</a></li>
-            <li><a href="contact.html">Contact Us</a></li>
-            <li><a href="lessons.html">Lessons</a></li>
+  <!-- Navbar -->
+  <div class="header">
+    <img src="usiu-logo.PNG" alt="USIU Phoenix Chess Club logo">
+    <ul class="navbar" id="navbar">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="tournament.html">Tournaments</a></li>
+      <li><a href="lessons.html">Lessons</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="menu-icon" id="menuIcon" aria-label="Open menu" role="button">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+
+  <div class="body">
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero-bg" id="heroBg"></div>
+      <div class="hero-content">
+        <span class="hero-badge">USIU Africa · Official Chess Club</span>
+        <h1>Using chess to<br><span>sharpen students' minds</span></h1>
+        <p>Join a community of passionate players. Compete, learn, and grow — all skill levels welcome.</p>
+        <div class="hero-cta">
+          <a href="contact.html" class="btn btn-primary">Join the club</a>
+          <a href="about.html" class="btn btn-outline">Learn more</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats -->
+    <div class="stats-bar">
+      <div class="stats-inner">
+        <div class="stat">
+          <span class="stat-num">100+</span>
+          <span class="stat-label">Active members</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">3+</span>
+          <span class="stat-label">Tournaments per year</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">All</span>
+          <span class="stat-label">Skill levels welcome</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">2019</span>
+          <span class="stat-label">Founded</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- About section -->
+    <div class="section">
+      <div class="split reveal">
+        <img class="split-img" src="usiu-chess-c.jpg" alt="USIU Phoenix Chess Club members playing">
+        <div class="split-text">
+          <span class="section-label">About us</span>
+          <h2 class="section-title">Welcome to the USIU Phoenix Chess Club</h2>
+          <p>We are a community of chess enthusiasts at USIU Africa — a friendly, inclusive space for players of all levels. Whether you're picking up a piece for the first time or preparing for nationals, there's a place for you here.</p>
+          <a href="about.html" class="btn btn-outline">Our story →</a>
+        </div>
+      </div>
+    </div>
+
+    <hr class="divider">
+
+    <!-- Tournaments -->
+    <div class="section">
+      <div class="split split-reverse reveal">
+        <img class="split-img" src="usiu-chess-b.jpg" alt="Chess tournament in progress">
+        <div class="split-text">
+          <span class="section-label">Compete</span>
+          <h2 class="section-title">Upcoming Tournaments</h2>
+          <p>We participate in major national events including the KUSA Chess Tournament and the Kenyan National League. Represent USIU and test your game against the best student players in the country.</p>
+          <a href="tournament.html" class="btn btn-outline">View tournaments →</a>
+        </div>
+      </div>
+    </div>
+
+    <hr class="divider">
+
+    <!-- Lessons -->
+    <div class="section">
+      <div class="split reveal">
+        <img class="split-img" src="usiu-chess.jpg" alt="Chess lessons in session">
+        <div class="split-text">
+          <span class="section-label">Learn</span>
+          <h2 class="section-title">Chess Lessons for Every Level</h2>
+          <p>Our experienced instructors guide you through openings, strategy, time management, and tournament preparation. From your first move to advanced tactics — we've got you covered.</p>
+          <a href="lessons.html" class="btn btn-outline">Explore lessons →</a>
+        </div>
+      </div>
+    </div>
+
+    <hr class="divider">
+
+    <!-- Feature highlights -->
+    <div class="section">
+      <div style="text-align:center; margin-bottom:0.5rem;">
+        <span class="section-label">What we offer</span>
+      </div>
+      <h2 class="section-title" style="text-align:center; margin:0 auto 0.5rem;">Everything you need to grow</h2>
+      <p class="section-sub" style="margin:0 auto; text-align:center;">From beginner sessions to competitive prep — the club has it all.</p>
+      <div class="features-grid" style="margin-top:2.5rem;">
+        <div class="feature-card reveal">
+          <div class="feature-icon">♟</div>
+          <h3>Regular training</h3>
+          <p>Weekly sessions every Monday–Thursday, 5–7 PM at the USIU Student Centre, 3rd floor.</p>
+        </div>
+        <div class="feature-card reveal">
+          <div class="feature-icon">🏆</div>
+          <h3>Tournament play</h3>
+          <p>Compete in KUSA, the Kenyan National League, and other regional events throughout the year.</p>
+        </div>
+        <div class="feature-card reveal">
+          <div class="feature-icon">📖</div>
+          <h3>Structured lessons</h3>
+          <p>Openings, tactics, endgames, time management — a real curriculum delivered by experienced players.</p>
+        </div>
+        <div class="feature-card reveal">
+          <div class="feature-icon">🤝</div>
+          <h3>Community</h3>
+          <p>A welcoming space for students, faculty, and chess lovers from all backgrounds and skill levels.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA banner -->
+    <div class="cta-banner reveal">
+      <h2>Ready to make your move?</h2>
+      <p>Join the USIU Phoenix Chess Club and start your chess journey today.</p>
+      <a href="contact.html" class="btn btn-primary">Get in touch →</a>
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-logo">
+        <img src="usiu-logo.PNG" alt="USIU Phoenix Chess Club">
+        <p>The official chess club of USIU Africa. All skill levels welcome.</p>
+      </div>
+      <div class="page-links">
+        <h3>Pages</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="tournament.html">Tournaments</a></li>
+          <li><a href="lessons.html">Lessons</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
-
-        <div class="menu-icon" id="menuIcon">&#9776;</div>
+      </div>
+      <div>
+        <h3>Contact</h3>
+        <address>
+          <p>chessclub@usiu.ac.ke</p>
+          <p>+254 722 000000</p>
+        </address>
+      </div>
+      <div>
+        <h3>Meetings</h3>
+        <p>Mon – Thu &nbsp;·&nbsp; 5–7 PM</p>
+        <p>Student Centre, 3rd Floor</p>
+        <p>USIU Africa</p>
+      </div>
     </div>
-    <div class="body">
-        <div class="hero-section">
-            <img src="hero-logo.jpg" alt="chess-hero-logo">
-            <h1 class="hero-section-text">"USING CHESS TO <br/>SHARPEN STUDENTS' MINDS"</h1>
-        </div>
-        <div class="about-section">
-                <div class="about-section-text">
-                    <h1>Welcome to the USIU Chess Club!</h1><br/>
-                    <p>Join a community passionate about the strategic game of chess at the USIU official Chess Club. We provide a friendly and inclusive environment for chess enthusiasts of all skill levels.</p><br/>
-                    <button><a href="contact.html" style="text-decoration: none; ">Contact Us</a></button>
-                </div>
-                <img src="usiu-chess-c.jpg" alt="">
-        </div>
-        <div class="tournament-section">
-            <img src="usiu-chess-b.jpg" alt="">
-                <div class="tournament-section-text">
-                    <h1>Upcoming Tournaments</h1><br/>
-                    <p>We participate in multiple national tournaments suchs as KUSA and the national league.</p><br/>
-                    <button><a href="tournament.html" style="text-decoration: none; ">View tournaments</a></button>
-                </div>
-
-        </div>
-
-        <div class="lessons-section">
-
-            <div class="lessons-section-text">
-                <h1>Chess Lessons</h1><br/>
-                <p>Enhance your chess skills with our comprehensive lessons. Whether you're a beginner or looking to refine your strategies, our experienced instructors are here to guide you through the world of chess.</p><br/>
-                <button><a href="lessons.html" style="text-decoration: none; ">Explore lessons</a></button>
-            </div>
-
-            <img src="usiu-chess.jpg" alt="">
-        </div>
-
+    <div class="footer-bottom">
+      <p>&copy; 2024 USIU Phoenix Chess Club. All rights reserved.</p>
     </div>
-    <footer>
-        <div class="footer-content">
-            <div class="footer-logo">
-                <img src="usiu-logo.PNG" alt="usiu-logo">
-            </div>
+  </footer>
 
-            <div class="contact-info">
-                <h3>Contact Us</h3>
-                <p>Email: chessclub@usiu.edu</p>
-                <p>Phone: +254 72200000</p>
-            </div>
+  <script>
+    // Mobile menu
+    const menuIcon = document.getElementById('menuIcon');
+    const navbar   = document.getElementById('navbar');
+    menuIcon.addEventListener('click', () => navbar.classList.toggle('show'));
 
-            <div class="page-links">
-                <h3>Quick Links</h3>
-                <ul>
-                    <li><a href="index.html" class="active">Home</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="tournament.html">Tournaments</a></li>
-                    <li><a href="contact.html">Contact Us</a></li>
-                    <li><a href="lessons.html">Lessons</a></li>
-                </ul>
-            </div>
+    // Subtle hero parallax
+    const heroBg = document.getElementById('heroBg');
+    window.addEventListener('scroll', () => {
+      const y = window.scrollY;
+      if (heroBg) heroBg.style.transform = `scale(1.03) translateY(${y * 0.15}px)`;
+    }, { passive: true });
 
-            <div>
-                <h3>location and meeting time</h3>
-                <p>Monday to thursday 5-7pm</p>
-                <p>USIU student center</p>
-                <p>3rd floor</p>
-            </div>
-
-        </div>
-
-        <div class="footer-bottom">
-            <p>&copy; 2023 USIU Chess Club. All Rights Reserved.</p>
-        </div>
-    </footer>
-    <script>
-        document.getElementById('menuIcon').addEventListener('click', function() {
-            var navbar = document.getElementById('navbar');
-            navbar.classList.toggle('show');
-        });
-    </script>
+    // Scroll reveal
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
 </body>
 </html>

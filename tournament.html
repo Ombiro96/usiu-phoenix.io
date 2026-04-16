@@ -1,96 +1,141 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>USIU Phoenix chess club</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="tournament.css">
-    <link rel="shortcut icon" href="usiu-logo.PNG" type="image/x-icon">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tournaments – USIU Phoenix Chess Club</title>
+  <meta name="description" content="Explore chess tournaments the USIU Phoenix Chess Club competes in — including KUSA and the Kenyan National League.">
+  <link rel="shortcut icon" href="usiu-logo.PNG" type="image/x-icon">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="tournament.css">
+  <style>
+    .page-hero {
+      background: linear-gradient(135deg, var(--bg-2) 0%, var(--bg-3) 100%);
+      border-bottom: 1px solid var(--border);
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+    .page-hero .section-label { display: block; margin-bottom: 0.75rem; }
+    .page-hero h1 { font-size: clamp(1.8rem, 4vw, 3rem); font-weight: 800; margin-bottom: 0.75rem; }
+    .page-hero p { color: var(--text-muted); font-size: 1.05rem; max-width: 540px; margin: 0 auto; line-height: 1.7; }
+  </style>
 </head>
 <body>
-    <div class="header">
-        <img src="usiu-logo.PNG" alt="usiu-logo">
 
-        <ul class="navbar" id="navbar">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="tournament.html" class="active">Tournaments</a></li>
-            <li><a href="contact.html">Contact Us</a></li>
-            <li><a href="lessons.html">Lessons</a></li>
+  <div class="header">
+    <img src="usiu-logo.PNG" alt="USIU Phoenix Chess Club logo">
+    <ul class="navbar" id="navbar">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="tournament.html" class="active">Tournaments</a></li>
+      <li><a href="lessons.html">Lessons</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="menu-icon" id="menuIcon" aria-label="Open menu" role="button">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+
+  <div class="body">
+
+    <div class="page-hero">
+      <span class="section-label">Compete</span>
+      <h1>Tournaments</h1>
+      <p>We represent USIU Africa at national and regional chess competitions throughout the year.</p>
+    </div>
+
+    <div class="section">
+      <div class="tournament-grid">
+
+        <div class="tournament-card reveal">
+          <img src="usiu-chess-b.jpg" alt="Kenyan National Chess League">
+          <div class="tournament-card-body">
+            <span class="section-label" style="font-size:0.7rem;">National</span>
+            <h2>Kenyan National League</h2>
+            <p>Players from across the country compete for the championship in this premier annual event. Experience high-level chess and exciting strategies as USIU takes on the best in Kenya.</p>
+            <a href="https://nation.africa/kenya/sports/other-sports/chess-equity-bank-win-premier-league--4439556"
+               target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+              Learn more →
+            </a>
+          </div>
+        </div>
+
+        <div class="tournament-card reveal">
+          <img src="usiu-chess-d.jpg" alt="KUSA Chess Tournament">
+          <div class="tournament-card-body">
+            <span class="section-label" style="font-size:0.7rem;">University</span>
+            <h2>KUSA Chess Tournament</h2>
+            <p>Organised by the Kenya University Sports Association, KUSA brings together student players from universities across the country. Showcase your skills and compete for USIU's honour.</p>
+            <a href="https://www.the-star.co.ke/sports/2023-04-03-kusa-games-were-part-of-scorpions-and-gladiators-preps-senge/"
+               target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+              Learn more →
+            </a>
+          </div>
+        </div>
+
+        <div class="tournament-card reveal">
+          <img src="usiu-chess-f.jpg" alt="Other chess tournaments">
+          <div class="tournament-card-body">
+            <span class="section-label" style="font-size:0.7rem;">Community</span>
+            <h2>Other Tournaments</h2>
+            <p>Throughout the year we participate in additional community and club tournaments. Whether you are a seasoned player or just getting started, there is a competitive experience waiting for you.</p>
+            <a href="contact.html" class="btn btn-outline">Get involved →</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div style="text-align:center; padding-bottom:4rem;">
+      <p style="color:var(--text-muted); margin-bottom:1.25rem;">Want to represent USIU at the next event?</p>
+      <a href="contact.html" class="btn btn-primary">Contact us →</a>
+    </div>
+
+  </div>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-logo">
+        <img src="usiu-logo.PNG" alt="USIU Phoenix Chess Club">
+        <p>The official chess club of USIU Africa. All skill levels welcome.</p>
+      </div>
+      <div class="page-links">
+        <h3>Pages</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="tournament.html">Tournaments</a></li>
+          <li><a href="lessons.html">Lessons</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
-
-        <div class="menu-icon" id="menuIcon">&#9776;</div>
+      </div>
+      <div>
+        <h3>Contact</h3>
+        <address>
+          <p>chessclub@usiu.ac.ke</p>
+          <p>+254 722 000000</p>
+        </address>
+      </div>
+      <div>
+        <h3>Meetings</h3>
+        <p>Mon – Thu &nbsp;·&nbsp; 5–7 PM</p>
+        <p>Student Centre, 3rd Floor</p>
+        <p>USIU Africa</p>
+      </div>
     </div>
-    <div class="body">
-        <div class="tournament-section" id="kenyan-league">
-            <img src="usiu-chess-b.jpg" alt="">
-            <div class="tournament-section-text">
-                <h1>Kenyan National League</h1>
-                <p>Join us for the Kenyan National Chess League, where players from across the country compete for the championship. Experience high-level chess games and exciting strategies.</p>
-                <button><a href="https://nation.africa/kenya/sports/other-sports/chess-equity-bank-win-premier-league--4439556" target="_blank" style="text-decoration: none;">Learn More</a></button>
-            </div>
-        </div>
-
-        <div class="tournament-section" id="kusa">
-            <div class="tournament-section-text">
-                <h1>KUSA Chess Tournament</h1>
-                <p>Participate in the KUSA Chess Tournament organized by the Kenya University Sports Association. Showcase your chess skills and compete against players from various universities.</p>
-                <button><a href="https://www.the-star.co.ke/sports/2023-04-03-kusa-games-were-part-of-scorpions-and-gladiators-preps-senge/" target="_blank" style="text-decoration: none;">Learn More</a></button>
-            </div>
-            <img src="usiu-chess-d.jpg" alt="">
-        </div>
-
-        <div class="tournament-section" id="other-tournament">
-            <img src="usiu-chess-f.jpg" alt="">
-            <div class="tournament-section-text">
-                <h1>Other Tournaments</h1>
-                <p>Explore additional chess tournaments organized by our community. Whether you are a seasoned player or a beginner, there's a tournament for everyone. Join us for a challenging and fun chess experience!</p>
-                <button><a href="https://www.the-star.co.ke/sports/2023-04-03-kusa-games-were-part-of-scorpions-and-gladiators-preps-senge/" target="_blank" style="text-decoration: none;">Learn More</a></button>
-            </div>
-        </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 USIU Phoenix Chess Club. All rights reserved.</p>
     </div>
-    <footer>
-        <div class="footer-content">
-            <div class="footer-logo">
-                <img src="usiu-logo.PNG" alt="USIU Chess Club Logo">
-            </div>
+  </footer>
 
-            <div class="contact-info">
-                <h3>Contact Us</h3>
-                <p>Email: chessclub@usiu.edu</p>
-                <p>Phone: +254 72200000</p>
-            </div>
-
-            <div class="page-links">
-                <h3>Quick Links</h3>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="tournament.html" class="active">Tournaments</a></li>
-                    <li><a href="contact.html">Contact Us</a></li>
-                    <li><a href="lessons.html">Lessons</a></li>
-                </ul>
-            </div>
-
-            <div>
-                <h3>location and meeting time</h3>
-                <p>Monday to thursday 5-7pm</p>
-                <p>USIU student center</p>
-                <p>3rd floor</p>
-            </div>
-
-        </div>
-
-        <div class="footer-bottom">
-            <p>&copy; 2023 USIU Chess Club. All Rights Reserved.</p>
-        </div>
-    </footer>
-    <script>
-        document.getElementById('menuIcon').addEventListener('click', function() {
-            var navbar = document.getElementById('navbar');
-            navbar.classList.toggle('show');
-        });
-    </script>
+  <script>
+    document.getElementById('menuIcon').addEventListener('click', function() {
+      document.getElementById('navbar').classList.toggle('show');
+    });
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
 </body>
 </html>
